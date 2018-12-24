@@ -6,8 +6,8 @@ class ArticlesController < ApplicationController
 	def edit
   	@article = Article.find(params[:id])
 	end
-
-	http_basic_authenticate_with name: "cmerchant", password: "$Ju061987", except: [:index, :show]
+#set your own name and password
+	http_basic_authenticate_with name: "user", password: "password", except: [:index, :show]
 
 	def index
     @articles = Article.all
